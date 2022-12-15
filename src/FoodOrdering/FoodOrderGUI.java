@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FoodOrderGUI extends JFrame{
-    private JPanel JPanel1;
     private JCheckBox cPizza;
     private JPanel pnlMain;
     private JCheckBox cBurger;
@@ -26,6 +25,7 @@ public class FoodOrderGUI extends JFrame{
     private List<JRadioButton> discounts;
     public static void main(String[] args) {
         FoodOrderGUI frame = new FoodOrderGUI();
+        frame.setTitle("Food Ordering System");
         frame.setContentPane(frame.pnlMain);
         frame.setSize(600, 500);
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -60,30 +60,13 @@ public class FoodOrderGUI extends JFrame{
         for (JCheckBox cb : menu) {
             if (cb.isSelected()) {
                 String food = cb.getText();
-                switch(food) {
-                    case "Fries":
-                        price += 65;
-                        break;
-
-                    case "Pizza":
-                        price += 100;
-                        break;
-
-                    case "Burger":
-                        price += 80;
-                        break;
-
-                    case "Soft Drinks":
-                        price += 55;
-                        break;
-
-                    case "Tea":
-                        price += 50;
-                        break;
-
-                    case "Sundae":
-                        price += 40;
-                        break;
+                switch (food) {
+                    case "Fries" -> price += 65;
+                    case "Pizza" -> price += 100;
+                    case "Burger" -> price += 80;
+                    case "Soft Drinks" -> price += 55;
+                    case "Tea" -> price += 50;
+                    case "Sundae" -> price += 40;
                 }
             }
         }
