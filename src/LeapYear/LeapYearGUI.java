@@ -2,8 +2,10 @@ package LeapYear;
 
 import javax.swing.*;
 
-public class LeapYearGUI {
-    private JPanel panel1;
-    private JTextField textField1;
+public class LeapYearGUI extends JFrame{
+    private JPanel pnlMain;
+    private JTextField tfYear;
     private JButton checkButton;
+    private JLabel yearLabel;
+
 }
