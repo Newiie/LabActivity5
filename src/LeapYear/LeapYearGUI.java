@@ -15,6 +15,20 @@ public class LeapYearGUI extends JFrame{
         year.setVisible(true);
     }
     public LeapYearGUI() {
-
+        checkButton.addActionListener((event) -> {
+            if (Integer.parseInt(tfYear.getText()) % 4 == 0) {
+                if (Integer.parseInt(tfYear.getText()) % 100 == 0) {
+                    if (Integer.parseInt(tfYear.getText()) % 400 == 0) {
+                        JOptionPane.showMessageDialog(null, "Leap Year", "Message", 1);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Not Leap Year", "Message", 1);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Leap Year", "Message", 1);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Not Leap Year", "Message", 1);
+            }
+        });
     }
 }
