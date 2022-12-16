@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class SimpleCalcGUI extends JFrame {
     private JTextField tfNumber1;
-    private JTextField tfNumber;
+    private JTextField tfNumber2;
     private JTextField lblResult;
     private JButton btnCompute;
     private JPanel pnlMain;
@@ -30,7 +30,7 @@ public class SimpleCalcGUI extends JFrame {
                         try {
                             String operation = cbOperations.getSelectedItem().toString();
                             double num1 = Double.parseDouble(tfNumber1.getText());
-                            double num2 = Double.parseDouble(tfNumber.getText());
+                            double num2 = Double.parseDouble(tfNumber2.getText());
                             double result;
                             switch (operation) {
                                 case "-":
