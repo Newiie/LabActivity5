@@ -17,18 +17,22 @@ public class LeapYearGUI extends JFrame{
     }
     public LeapYearGUI() {
         checkButton.addActionListener((event) -> {
-            if (Integer.parseInt(tfYear.getText()) % 4 == 0) {
-                if (Integer.parseInt(tfYear.getText()) % 100 == 0) {
-                    if (Integer.parseInt(tfYear.getText()) % 400 == 0) {
-                        JOptionPane.showMessageDialog(null, "Leap Year", "Message", 1);
+            try {
+                if (Integer.parseInt(tfYear.getText()) % 4 == 0) {
+                    if (Integer.parseInt(tfYear.getText()) % 100 == 0) {
+                        if (Integer.parseInt(tfYear.getText()) % 400 == 0) {
+                            JOptionPane.showMessageDialog(null, "Leap Year", "Message", 1);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Not Leap Year", "Message", 1);
+                        }
                     } else {
-                        JOptionPane.showMessageDialog(null, "Not Leap Year", "Message", 1);
+                        JOptionPane.showMessageDialog(null, "Leap Year", "Message", 1);
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "Leap Year", "Message", 1);
+                    JOptionPane.showMessageDialog(null, "Not Leap Year", "Message", 1);
                 }
-            } else {
-                JOptionPane.showMessageDialog(null, "Not Leap Year", "Message", 1);
+            } catch (NumberFormatException x) {
+                JOptionPane.showMessageDialog(null, "Input must be a number", "Message", 1);
             }
         });
     }
